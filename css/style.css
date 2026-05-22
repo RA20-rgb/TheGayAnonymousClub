@@ -1,0 +1,302 @@
+/* Импортируем современный шрифт Montserrat из Google Fonts */
+@import url('https://googleapis.com');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #e0e0e0;
+    background-color: #0b0c10; /* Глубокий темный фон */
+    margin: 0;
+    padding: 0;
+    transition: background 1s ease; /* Для плавного переливания фона из JS */
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* --- Переливающийся неоновый фон для Body (активируется кнопкой) --- */
+.animated-bg {
+    background: linear-gradient(45deg, #0b0c10, #1f2833, #120136, #03001e);
+    background-size: 400% 400%;
+    animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* --- Шапка сайта (Header) --- */
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #1f2833;
+    border-bottom: 2px solid #00f7ff; /* Неоновая линия */
+    box-shadow: 0 0 15px rgba(0, 247, 255, 0.3);
+}
+
+header h1 {
+    font-size: 32px;
+    font-weight: 900;
+    color: #00f7ff;
+    text-shadow: 0 0 10px rgba(0, 247, 255, 0.7);
+}
+
+.navig1 {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.navig1 a {
+    color: #c5a3ff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.navig1 a:hover {
+    color: #00f7ff;
+    text-shadow: 0 0 8px rgba(0, 247, 255, 0.8);
+}
+
+/* --- Секция "Для наполненности" --- */
+#myDiv {
+    text-align: center;
+    margin: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+/* --- Интерактивные кнопки (с анимацией пульсации и свечения) --- */
+.pyk, .lilil {
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 30px;
+    border: none;
+    margin: 15px auto;
+    padding: 12px 25px;
+    cursor: pointer;
+    display: block;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.pyk {
+    background: linear-gradient(45deg, #493fa6, #e394b1, #f69d3c);
+}
+
+.pyk:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 20px #e394b1;
+}
+
+.lilil {
+    background: linear-gradient(45deg, #ff654a, #d2b730);
+    animation: pulseGlow 2s infinite; /* Постоянная анимация пульсации */
+}
+
+@keyframes pulseGlow {
+    0% { transform: scale(1); box-shadow: 0 0 10px rgba(255, 101, 74, 0.5); }
+    50% { transform: scale(1.05); box-shadow: 0 0 25px rgba(210, 183, 48, 0.8); }
+    100% { transform: scale(1); box-shadow: 0 0 10px rgba(255, 101, 74, 0.5); }
+}
+
+.lilil:active {
+    transform: scale(0.95);
+}
+
+/* --- Ссылки на соцсети --- */
+.social {
+    color: #00f7ff;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 20px;
+    border: 2px solid #00f7ff;
+    display: inline-block;
+    margin: 10px 0;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.social:hover {
+    background-color: #00f7ff;
+    color: #0b0c10;
+    box-shadow: 0 0 15px rgba(0, 247, 255, 0.6);
+    transform: translateY(-2px);
+}
+
+/* --- Карточки знаменитостей --- */
+main p {
+    text-align: center;
+    margin: 15px;
+    font-size: 18px;
+}
+
+#lic1, #lic2, #lic3, #lic4, #lic5, #lic6 {
+    background: rgba(31, 40, 51, 0.7); /* Полупрозрачный темный фон */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 25px auto;
+    padding: 25px;
+    max-width: 600px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    backdrop-filter: blur(5px); /* Эффект матового стекла */
+}
+
+/* Физик Витя подсвечен зеленым неоном */
+#lic5 {
+    border: 2px solid #39ff14;
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.3);
+}
+
+/* Секретный Ваня скрыт */
+#lic6 {
+    display: none;
+    border: 2px solid #ff007f;
+    box-shadow: 0 0 20px rgba(255, 0, 127, 0.3);
+}
+
+.vseostalinoe h2 {
+    color: #ffffff;
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Картинки с неоновой рамкой */
+.vseostalinoe img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+    display: block;
+    margin: 0 auto;
+}
+
+.textParag {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.citat {
+    font-size: 20px;
+    color: #ff007f; /* Ярко-розовый неоновый для цитат */
+    text-shadow: 0 0 5px rgba(255, 0, 127, 0.3);
+    margin: 15px 0;
+    display: block;
+    font-style: italic;
+}
+
+/* Селектор внутри цитаты Ивана */
+.citat select {
+    background: #1f2833;
+    color: #fff;
+    border: 1px solid #ff007f;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* --- Секция "Об авторе" --- */
+#us {
+    background: linear-gradient(135deg, #1f2833, #0b0c10);
+    border: 2px dashed #c5a3ff;
+    color: #e0e0e0;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+#us h2 {
+    color: #c5a3ff;
+    margin-bottom: 10px;
+}
+
+/* --- Подвал (Footer) --- */
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+    background-color: #1f2833;
+    border-top: 2px solid #ff007f;
+}
+
+footer p {
+    font-size: 28px;
+    font-weight: 900;
+    color: #ff007f;
+    text-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
+}
+/* --- Стили для мобильных телефонов --- */
+@media (max-width: 768px) {
+    /* Уменьшаем шрифты в шапке и подвале, чтобы они не занимали весь экран */
+    header h1 {
+        font-size: 24px;
+    }
+    
+    footer p {
+        font-size: 20px;
+    }
+
+    /* Навигационное меню делаем в виде аккуратного вертикального списка */
+    .navig1 {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    /* Делаем карточки знаменитостей чуть компактнее */
+    #lic1, #lic2, #lic3, #lic4, #lic5, #lic6, #us {
+        margin: 15px;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    /* Картинка на телефоне будет занимать почти всю ширину карточки */
+    .vseostalinoe img {
+        width: 95%;
+        max-width: 100%;
+    }
+
+    /* Цитаты делаем чуть меньше, чтобы текст красиво переносился */
+    .citat {
+        font-size: 16px;
+        margin: 10px 0;
+    }
+
+    /* Кнопки и ссылки делаем удобного размера для нажатия пальцем */
+    .pyk, .lilil {
+        font-size: 18px;
+        padding: 10px 20px;
+        width: 90%; /* Кнопка растянется почти на всю ширину для удобства */
+        max-width: 280px;
+    }
+
+    .social {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
